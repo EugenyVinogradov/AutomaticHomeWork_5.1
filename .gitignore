@@ -41,3 +41,4 @@ out/
 *.rar
 
 Screenshots
+!gradle/wrapper/gradle-wrapper.jar
