@@ -7,12 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import ru.netology.delivery.data.DataGenerator;
 
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -49,7 +45,6 @@ class DeliveryTest {
         form.$("[data-test-id=date] input").sendKeys(Keys.DELETE);
         form.$("[data-test-id=date] input").setValue(secondMeetingDate);
         $x("//span[text()='Запланировать']").click();
-//        System.out.println($$(".notification__content"));
         System.out.println($$(".notification__content").filter(Condition.visible).first());
         System.out.println($$(".notification__content").filter(Condition.visible).last());
         $$(".notification__content").filter(Condition.visible).last().shouldHave(Condition.text("У вас уже запланирована встреча на другую дату." +
